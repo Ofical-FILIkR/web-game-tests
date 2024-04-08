@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1 -->
+    <div id="1" style="display: visible;">
+        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13.5" cy="13.5" r="13.5" fill="#D9D9D9"/>
+        </svg>
+    </div>
+            
+    <!-- 2 -->
+    <div id="2" style="display: none;">
+        <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="13.5" cy="10" rx="13.5" ry="10" fill="#D9D9D9"/>
+        </svg>
+    </div>
+
+    <!-- 3 -->
+    <div id="3" style="display: none;">
+        <svg width="27" height="13" viewBox="0 0 27 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="13.5" cy="6.5" rx="13.5" ry="6.5" fill="#D9D9D9"/>
+        </svg>
+    </div>
+
+    <!-- 4 -->
+    <div id="4" style="display: none;">
+        <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="13.5" cy="15.5" rx="13.5" ry="15.5" fill="#D9D9D9"/>
+        </svg>   
+    </div>
+
+    <!-- 5 -->
+    <div id="5" style="display: none;">
+        <svg width="27" height="40" viewBox="0 0 27 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="13.5" cy="20" rx="13.5" ry="20" fill="#D9D9D9"/>
+        </svg>
+    </div>
+
+
+
+
+    <script>
+        let count = 1
+        let over_count = 0
+        let direction = true
+
+        function set_count_next_shot() {
+            over_count++
+            console.log('over_count: ', over_count)
+            console.log('count: ', count)
+            
+            let shot = document.getElementById(String(count))
+            
+            shot.style.display = "none"
+            console.log(shot)
+            if (direction === true){
+                if(count > 4) {
+                    direction = false;
+                    count--;
+                } else {
+                    count++; 
+                } 
+                console
+            } else {
+                if (count < 2 ){
+                    direction = true
+                    count++;
+                } else { 
+                    count--;
+                }
+            }
+            
+            let next_shot = document.getElementById(String(count))
+
+            next_shot.style.display = "block"
+            console.log(next_shot)
+        }
+        
+        let timerId = setInterval(() => set_count_next_shot(), 180);
+
+
+        console.log(document.getElementById(String(1)))
+        console.log(document.getElementById(String(2)))
+        console.log(document.getElementById(String(3)))
+        console.log(document.getElementById(String(4)))
+        console.log(document.getElementById(String(5)))
+    </script>
+</body>
+</html>
