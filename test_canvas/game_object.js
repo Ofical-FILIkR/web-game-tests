@@ -1,9 +1,20 @@
 class GameObject {
-    constructor (name, transform) {
+    constructor (name, transform, space) {
         this.name = name
         this.transform = transform 
         this.visualization = visualization
+
+        this.space = space
+        this.create_obj()
     }
+
+    create_obj() {
+        this    
+    }
+
+
+
+
 }
 
 
